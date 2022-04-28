@@ -58,6 +58,10 @@ app.post("/api/movies", auth, async function (req, res) {
     }
 })
 
+app.get("/api/admin",function(req, res){
+    res.send("Welcome to admin");
+})
+
 app.post("/api/admin", async function (req, res) {
     try {
         req.body.password = await bcrypt.hash(req.body.password, 8);
